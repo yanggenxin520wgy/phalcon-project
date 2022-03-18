@@ -24,11 +24,22 @@ $load->registerDirs([
     ])
     ->register();
 
-if (file_exists(dirname(PROJECT_PATH) . DS .'vendor' . DS . 'autoload.php')) {
-    require_once dirname(PROJECT_PATH) . DS .'vendor' . DS . 'autoload.php';
-}
+$vendorPath = realpath(dirname(PROJECT_PATH ) . '/../../');
+if (false !== stripos($vendorPath, '/vendor')) {
+    if (file_exists($vendorPath . DS . 'autoload.php')) {
+        require_once $vendorPath . DS . 'autoload.php';
+    }
 
-if (file_exists(dirname(PROJECT_PATH) . DS .'vendor' . DS . 'phalcon' .DS . 'devtools' . DS . 'bootstrap' . DS . 'autoload.php')) {
-    require_once dirname(PROJECT_PATH) . DS .'vendor' . DS . 'phalcon' .DS . 'devtools' . DS . 'bootstrap' . DS . 'autoload.php';
+    if (file_exists($vendorPath . DS . 'phalcon' . DS . 'devtools' . DS . 'bootstrap' . DS . 'autoload.php')) {
+        require_once $vendorPath . DS . 'phalcon' . DS . 'devtools' . DS . 'bootstrap' . DS . 'autoload.php';
+    }
+} else {
+    if (file_exists(dirname(PROJECT_PATH) . DS . 'vendor' . DS . 'autoload.php')) {
+        require_once dirname(PROJECT_PATH) . DS . 'vendor' . DS . 'autoload.php';
+    }
+
+    if (file_exists(dirname(PROJECT_PATH) . DS . 'vendor' . DS . 'phalcon' . DS . 'devtools' . DS . 'bootstrap' . DS . 'autoload.php')) {
+        require_once dirname(PROJECT_PATH) . DS . 'vendor' . DS . 'phalcon' . DS . 'devtools' . DS . 'bootstrap' . DS . 'autoload.php';
+    }
 }
 
