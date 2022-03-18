@@ -27,6 +27,8 @@ $load->registerDirs([
 
 $vendorPath = realpath(dirname(PROJECT_PATH ) . '/../../');
 if (false !== stripos($vendorPath, '/vendor')) {
+    $dotenv = new Dotenv(realpath('.'));
+    $dotenv->load();
     if (file_exists($vendorPath . DS . 'autoload.php')) {
         require_once $vendorPath . DS . 'autoload.php';
     }
@@ -43,7 +45,4 @@ if (false !== stripos($vendorPath, '/vendor')) {
         require_once dirname(PROJECT_PATH) . DS . 'vendor' . DS . 'phalcon' . DS . 'devtools' . DS . 'bootstrap' . DS . 'autoload.php';
     }
 }
-
-$dotenv = new Dotenv(realpath('.'));
-$dotenv->load();
 

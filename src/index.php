@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 
 use Project\Core\Version\Version;
