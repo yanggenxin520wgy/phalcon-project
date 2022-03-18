@@ -1,0 +1,35 @@
+{
+  "name": "flash-express/store",
+  "license": "proprietary",
+  "type": "project",
+  "require": {
+    "php": "^7.2",
+    "ext-json": "*",
+    "ext-phalcon": "*",
+    "ext-redis": "*",
+    "ext-curl": "*",
+    "ext-intl": "*",
+    "vlucas/phpdotenv": "^2.4",
+    "webgeeker/validation": "0.5.2",
+    "fguillot/json-rpc": "^1.2",
+    "danielstjules/stringy": "~3.1.0",
+    "lcobucci/jwt": "^3.3",
+    "ramsey/uuid": "^3.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "": ""
+    },
+    "psr-0": {
+      "": ""
+    },
+    "files": [
+      "app/library/functions.php"
+    ]
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "cp -i ./.env.example ./.env"
+    ]
+  }
+}
