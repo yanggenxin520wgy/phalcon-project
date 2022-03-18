@@ -8,6 +8,7 @@
         "ext-json": "*",
         "ext-curl": "*",
         "ext-intl": "*",
+        "vlucas/phpdotenv": "^2.4",
         "phalcon/devtools": "3.4"
     },
     "license": "MIT",
@@ -25,5 +26,11 @@
         "files": [
             "src/functions.php"
         ]
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.org"
+        }
     }
 }

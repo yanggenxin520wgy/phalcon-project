@@ -14,7 +14,8 @@
     "fguillot/json-rpc": "^1.2",
     "danielstjules/stringy": "~3.1.0",
     "lcobucci/jwt": "^3.3",
-    "ramsey/uuid": "^3.9"
+    "ramsey/uuid": "^3.9",
+    "fe/phalcon-project": "dev-main"
   },
   "autoload": {
     "psr-4": {
@@ -31,5 +32,11 @@
     "post-update-cmd": [
       "cp -i ./.env.example ./.env"
     ]
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.org"
+    }
   }
 }

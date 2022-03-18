@@ -1,6 +1,7 @@
 <?php
 
 use Phalcon\Loader;
+use Dotenv\Dotenv;
 
 if (!extension_loaded('phalcon')) {
     throw new Exception('未安装phalcon框架扩展');
@@ -42,4 +43,7 @@ if (false !== stripos($vendorPath, '/vendor')) {
         require_once dirname(PROJECT_PATH) . DS . 'vendor' . DS . 'phalcon' . DS . 'devtools' . DS . 'bootstrap' . DS . 'autoload.php';
     }
 }
+
+$dotenv = new Dotenv(realpath('.'));
+$dotenv->load();
 

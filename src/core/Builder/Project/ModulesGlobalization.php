@@ -100,7 +100,7 @@ class ModulesGlobalization extends ProjectBuilder
     {
         $getFile = $this->options->get('templatePath') . '/project/' . self::$module_key . '/HealthyController.php';
         $putFile = $this->options->get('projectPath') . '/app/modules/base/common/controllers/HealthyController.php';
-        $this->generateFile($getFile, $putFile, 'Common', $this->options->get('namespace', 'App'));
+        $this->generateFile($getFile, $putFile, $this->options->get('name'), $this->options->get('namespace', 'App'));
 
         return $this;
     }

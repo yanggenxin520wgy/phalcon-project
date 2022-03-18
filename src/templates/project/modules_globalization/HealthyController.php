@@ -1,7 +1,7 @@
 <?php
 
 
-namespace @@namespace@@\Modules\Base\@@name@@\Controllers;
+namespace @@namespace@@\Modules\Base\Common\Controllers;
 
 use @@namespace@@\Core\PhalBaseLogger;
 use Phalcon\Mvc\Controller;
