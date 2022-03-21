@@ -8,6 +8,6 @@ class Version extends \Phalcon\Devtools\Version
 {
     protected static function _getVersion()
     {
-        return [0, 0, 1, 4, 0];
+        return [1, 0, 0, 4, 0];
     }
 }

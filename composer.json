@@ -3,8 +3,8 @@
     "description": "基于phalcon/devtools 3.4 扩展的创建项目工具，扩展了适合我自己使用的项目结构",
     "type": "library",
     "require": {
-        "php": "7.2.34",
-        "ext-phalcon": "3.4.2",
+        "php": "^7.2.34",
+        "ext-phalcon": "~3.4.2",
         "ext-json": "*",
         "ext-curl": "*",
         "ext-intl": "*",
