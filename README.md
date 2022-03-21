@@ -48,5 +48,5 @@ Available commands:
   migration        (alias of: create-migration)        -创建数据库迁移文件
 ```
 
-#LICENSE 
+## LICENSE 
 It is open source software licensed under the <a href="https://github.com/yanggenxin520wgy/phalcon-project/blob/main/LICENSE">MIT</a>.
