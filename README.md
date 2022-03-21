@@ -46,7 +46,7 @@ Available commands:
   all-models       (alias of: create-all-models)       -根据数据库表创建所有的model文件
   project          (alias of: create-project)          -创建新项目
   migration        (alias of: create-migration)        -创建数据库迁移文件
-```sh
+```
 
 #LICENSE 
 It is open source software licensed under the <a href="https://github.com/yanggenxin520wgy/phalcon-project/blob/main/LICENSE">MIT</a>.
