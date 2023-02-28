@@ -31,10 +31,11 @@ abstract class ProjectBuilder extends \Phalcon\Builder\Project\ProjectBuilder
             $this->projectConfig = include $this->options->get('templatePath') . '/project/' . static::$module_key .'/config/config.php';
             foreach ($this->projectConfig->application as $dir => $path) {
                 if (strrpos($dir, 'Dir', -3) !== false) {
-                    $this->projectDirectories[] = str_replace(rtrim($this->options->get('templatePath'), '/') . '/project/', '', $path);
+                    $this->projectDirectories[] = trim(str_replace(rtrim($this->options->get('templatePath'), '/') . '/project/', '', $path), '/');
                 }
             }
 
+            $this->projectDirectories = array_unique($this->projectDirectories);
             sort($this->projectDirectories);
         }
     }
