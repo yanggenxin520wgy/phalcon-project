@@ -48,7 +48,7 @@ class Project extends \Phalcon\Commands\Builtin\Project implements CommandsInter
     {
         $projectName    = $this->getOption(['name', 1], null, 'default');
         $projectType    = $this->getOption(['type', 2], null, 'simple');
-        $projectPath    = $this->getOption(['directory', 3]);
+        $projectPath    = $this->getOption(['directory', 3], null, '../');
         $namespace      = $this->getOption(['namespace'], null, "App");
         $templatePath   = $this->getOption(['template-path'], null, TEMPLATE_PATH);
         $templateEngine = $this->getOption(['template-engine'], null, "phtml");
