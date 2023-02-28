@@ -27,7 +27,7 @@ class Project extends \Phalcon\Commands\Builtin\Project implements CommandsInter
     {
         return [
             'name=s'            => '项目名',
-            'directory=s'       => '项目根目录 [可选]',
+            'directory=s'       => '项目根目录 [可选], 默认当前目录',
             'namespace=s'       => '项目命名空间, 默认App [可选]',
             'type=s'            => '项目结构 [simple:单模块, modules：多模块, simple_globalization：单模块->国际化, modules_globalization: 多模块->国际化]',
             'template-path=s'   => '自定义模板文件路径 [可选]',
@@ -48,7 +48,7 @@ class Project extends \Phalcon\Commands\Builtin\Project implements CommandsInter
     {
         $projectName    = $this->getOption(['name', 1], null, 'default');
         $projectType    = $this->getOption(['type', 2], null, 'simple');
-        $projectPath    = $this->getOption(['directory', 3], null, '../');
+        $projectPath    = $this->getOption(['directory', 3]);
         $namespace      = $this->getOption(['namespace'], null, "App");
         $templatePath   = $this->getOption(['template-path'], null, TEMPLATE_PATH);
         $templateEngine = $this->getOption(['template-engine'], null, "phtml");

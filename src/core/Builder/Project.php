@@ -34,15 +34,10 @@ class Project extends \Phalcon\Builder\Project
     public function build()
     {
         if ($this->options->contains('directory')) {
-            $old = mb_strwidth($this->options->get('directory'));
-            $new_directory = ltrim($this->options->get('directory'), '\.\./');
-            $new = mb_strwidth($new_directory);
-            $n = ($old - $new) / 3;
-            $path = getcwd();
-            for ($i = 0; $i < $n; $i++) {
-                $path = dirname($path);
-            }
-            $this->path->setRootPath($path . DS . $new_directory);
+            $path = realpath($this->options->get('directory')) ?: $this->options->get('directory');
+            $this->path->setRootPath($path);
+        } else {
+            $this->path->setRootPath(getcwd());
         }
 
         $templatePath = TEMPLATE_PATH;
